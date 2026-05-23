@@ -13,15 +13,15 @@
   <h2>通关照片</h2>
   <div class="gallery-grid">
     <div class="gallery-item">
-      <img src="/images/01.webp" alt="插班生" onerror="this.src='/images/ErrorPicture.png'" />
+      <img src="/images/01.webp" alt="插班生" loading="lazy" onerror="this.src='/images/ErrorPicture.png'" />
       <p>插班生</p>
     </div>
     <div class="gallery-item">
-      <img src="/images/03.webp" alt="插班生二刷" onerror="this.src='/images/ErrorPicture.png'" />
+      <img src="/images/03.webp" alt="插班生二刷" loading="lazy" onerror="this.src='/images/ErrorPicture.png'" />
       <p>插班生二刷</p>
     </div>
     <div class="gallery-item">
-      <img src="/images/04.webp" alt="诈尸" onerror="this.src='/images/ErrorPicture.png'" />
+      <img src="/images/04.webp" alt="诈尸" loading="lazy" onerror="this.src='/images/ErrorPicture.png'" />
       <p>诈尸</p>
     </div>
   </div>
@@ -32,4 +32,4 @@
 
 <div class="ticks"></div>
 <section id="spacer"></section>
-`;var r=document.getElementById(`ghost-container`);function i(){let n=Math.random()>.5,a=n?e:t,o=a[Math.floor(Math.random()*a.length)],s=document.createElement(`img`);s.src=`/images/${o}`,s.className=`floating-ghost ${n?`move-right`:`move-left`}`;let c=Math.random()*60+15;s.style.top=`${c}%`,n?s.style.left=`-150px`:s.style.right=`-150px`,r.appendChild(s),setTimeout(()=>{s.remove(),setTimeout(i,Math.random()*3e3+2e3)},1e4)}i(),document.addEventListener(`click`,e=>{if(e.target.tagName===`IMG`||e.target.tagName===`A`)return;let t=n[Math.floor(Math.random()*n.length)],i=document.createElement(`img`);i.src=`/images/${t}`,i.className=`click-cat`;let a=document.body.getBoundingClientRect();i.style.left=`${e.clientX-a.left-50}px`,i.style.top=`${e.clientY-a.top-50}px`,r.appendChild(i),setTimeout(()=>{i.remove()},2e3)});
+`;var r=document.getElementById(`ghost-container`);[...e,...t,...n].forEach(e=>{let t=new Image;t.src=`/images/${e}`}),document.querySelectorAll(`.gallery-item img`).forEach(e=>{e.complete?e.setAttribute(`loaded`,``):e.addEventListener(`load`,()=>e.setAttribute(`loaded`,``))});function i(){let n=Math.random()>.5,a=n?e:t,o=a[Math.floor(Math.random()*a.length)],s=document.createElement(`img`);s.src=`/images/${o}`,s.className=`floating-ghost ${n?`move-right`:`move-left`}`;let c=Math.random()*60+15;s.style.top=`${c}%`,n?s.style.left=`-150px`:s.style.right=`-150px`,r.appendChild(s),setTimeout(()=>{s.remove(),setTimeout(i,Math.random()*3e3+2e3)},1e4)}i(),document.addEventListener(`click`,e=>{if(e.target.tagName===`IMG`||e.target.tagName===`A`)return;let t=n[Math.floor(Math.random()*n.length)],i=document.createElement(`img`);i.src=`/images/${t}`,i.className=`click-cat`;let a=document.body.getBoundingClientRect();i.style.left=`${e.clientX-a.left-50}px`,i.style.top=`${e.clientY-a.top-50}px`,r.appendChild(i),setTimeout(()=>{i.remove()},2e3)});
